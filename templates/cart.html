@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="product-details">
+        <h1>My Cart&nbsp;<i class="fa fa-shopping-cart"></i></h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="card mb-3">
+                        <div class="card-body shadow">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-4 text-center"><img class="img-fluid shadow-none p-2" src="{% static 'img/download%20(5).jpg"></div>
+                                        <div class="col">
+                                            <p class="mt-2" style="font-size: 10px;"><strong>&nbsp; Name of the product</strong><span class="text-success ms-2"><strong>Verified User&nbsp;</strong><i class="fa fa-user-plus"></i></span></p>
+                                            <p class="mt-2" style="font-size: 10px;"><i class="fa fa-eur"></i><strong>&nbsp; 499</strong></p>
+                                            <p class="text-black-50"></p>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <form>
+                                                        <div class="form-group mb-3"><input class="form-control" type="number" placeholder="Qty" min="1" max="8" value="1" name="qty"></div>
+                                                    </form>
+                                                </div>
+                                                <div class="col"><button class="btn btn-outline-dark d-block w-100" type="submit">Buy Later</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body shadow">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-4 text-center"><img class="img-fluid shadow-none p-2" src="{% static 'img/download%20(3).jpg"></div>
+                                        <div class="col">
+                                            <p class="mt-2" style="font-size: 10px;"><strong>&nbsp; Name of the product</strong><span class="text-success ms-2"><strong>Verified User&nbsp;</strong><i class="fa fa-user-plus"></i></span></p>
+                                            <p class="mt-2" style="font-size: 10px;"><i class="fa fa-eur"></i><strong>&nbsp; 499</strong></p>
+                                            <p class="text-black-50"></p>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <form>
+                                                        <div class="form-group mb-3"><input class="form-control" type="number" placeholder="Qty" min="1" max="8" value="1" name="qty"></div>
+                                                    </form>
+                                                </div>
+                                                <div class="col"><button class="btn btn-outline-dark d-block w-100" type="submit">Buy Later</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Product Cost</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-end"><i class="fa fa-euro"></i>&nbsp; 1234</p>
+                                </div>
+                            </div>
+                            <hr style="color: rgb(0,0,0);">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Shipng Cost</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-end"><i class="fa fa-euro"></i>&nbsp; 42</p>
+                                </div>
+                            </div>
+                            <hr style="color: rgb(0,0,0);">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Discount</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-end">&nbsp;-<i class="fa fa-euro"></i>&nbsp; 32</p>
+                                </div>
+                            </div>
+                            <hr style="color: rgb(0,0,0);">
+                            <hr style="color: rgb(0,0,0);">
+                            <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 18px;"><strong>Total</strong></p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-end" style="font-size: 18px;">&nbsp;<i class="fa fa-euro"></i>&nbsp;1122</p>
+                                </div>
+                            </div>
+                            <hr style="color: rgb(0,0,0);">
+                            <div class="row">
+                                <div class="col-12 col-sm-6"><button class="btn btn-outline-dark d-block w-100" type="submit">Cash on delivery</button></div>
+                                <div class="col"><button class="btn btn-primary d-block w-100" type="button">Pay now</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow pt-2">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group mb-3">
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="size" value="s" checked=""><label class="form-check-label" for="formCheck-1">Address 1 Pamplona</label></div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="size" value="m"><label class="form-check-label" for="formCheck-3">Address 2 Tarazona</label></div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="size" value="l"><label class="form-check-label" for="formCheck-2">Address 3 Zaragoza</label></div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col"><button class="btn btn-outline-dark d-block w-100" type="button" data-toggle="modal" data-target="#exampleModalCenter">Add New Address</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form method="POST">
+              <div class="modal-body">
+
+                      {% csrf_token %}
+                      {{address_form.as_p}}
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}

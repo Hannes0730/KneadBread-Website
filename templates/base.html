@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>KneadBread</title>
+    <meta name="description" content="Freshly Made Homemade Desserts! Made to Order. ">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/BS5-Jumbotron-with-background-Image.css'%}">
+    <link rel="stylesheet" href="{% static 'css/CheckOutPage-V10.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Elegant-Registration-Form.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Google-Style-Login.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-with-Button.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-Product-List.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Pretty-Registration-Form.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Product-Details.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Responsive-Product-Slider.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Simple-Slider.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Testimonials.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href="{% url 'home'%}"><img class="nav-image" src="{% static 'img/kneadbread.png'%}"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home'%}" style="font-weight: bold;">Home</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="font-weight: bold;">Menu</a>
+                        <div class="dropdown-menu border rounded shadow-lg">
+
+                            {% for item in category %}
+                            <a class="dropdown-item" href="{% url 'product-list' item %}" style="font-weight: bold;">{{item}}</a>
+                            {% endfor %}
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="mx-auto search-div"><i class="fa fa-search" style="margin-right: 7px;font-weight: bold;transform: rotateY(180deg);"></i><input class="mx-auto" type="search" name="search" placeholder="search product..."></div>
+                {% if not user.is_authenticated %}
+                <span class="navbar-text actions"> <a class="login" href="{% url 'loginuser'%}">Log In</a><a class="btn btn-light action-button" role="button" href="{% url 'register'%}">Sign Up</a></span>
+                {% else %}
+
+                <a class="cart-link" href="{% url 'cart'%}"><i class="fa fa-shopping-cart cart"></i></a>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="font-weight: bold;">{{user}}</a>
+                        <div class="dropdown-menu border rounded shadow-lg">
+                            <a class="dropdown-item" href="{% url 'logoutuser' %}" style="font-weight: bold;">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{% static 'js/Simple-Slider.js'%}"></script>
+    <script src="{% static 'js/terms.js'%}"></script>
+
+
+</body>
+
+</html>
